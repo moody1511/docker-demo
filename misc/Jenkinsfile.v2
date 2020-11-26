@@ -1,11 +1,5 @@
 node {
    def commit_id
-    agent {
-     dockerfile {
-          filename 'Dockerfile.jenkinsAgent'
-        }
-    }
-   stages {
    stage('Preparation') {
      checkout scm
      sh "git rev-parse --short HEAD > .git/commit-id"
@@ -35,4 +29,3 @@ node {
      }                                     
    }                                       
 }                                          
-}
